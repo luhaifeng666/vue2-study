@@ -1,12 +1,9 @@
-const { moduleExpression } = require("@babel/types")
+const { isObject } = require('../utils/index')
 
-// 判断传入的对象是否符合预期
-function isObject (obj) {
-  return typeof(obj) === 'object'
-        && !Array.isArray(obj)
-        && obj !== null
-        && obj !== undefined
-}
+const obj = {a: 1}
+convert(obj)
+// delete obj.a
+obj.a
 
 function convert(obj) {
   if (!isObject(obj)) throw new TypeError('请传入对象')
