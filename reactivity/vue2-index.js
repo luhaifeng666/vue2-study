@@ -1,9 +1,4 @@
-const obj = { foo: 123 }
-convert(obj)
-
-obj.foo
-obj.foo = 222
-obj.foo
+const { moduleExpression } = require("@babel/types")
 
 // 判断传入的对象是否符合预期
 function isObject (obj) {
@@ -32,3 +27,5 @@ function convert(obj) {
     })
   })
 }
+
+module.exports = convert

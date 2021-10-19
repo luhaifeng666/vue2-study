@@ -1,0 +1,22 @@
+{
+  "name": "vue2-study",
+  "version": "1.0.0",
+  "description": "vue2 study",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luhaifeng666/vue2-study.git"
+  },
+  "author": "luhaifeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luhaifeng666/vue2-study/issues"
+  },
+  "homepage": "https://github.com/luhaifeng666/vue2-study#readme",
+  "devDependencies": {
+    "jest": "^27.3.0"
+  }
+}
