@@ -1,5 +1,6 @@
 class Dep {
   constructor() {
+    // 这边用new Set可以有效的防止重复收集依赖
     this.depList = new Set()
   }
 
@@ -14,6 +15,7 @@ class Dep {
 
 let warpperHandler
 function autoRun(update) {
+  // 这么写的目的是依赖收集的时候，确保代码是最新的
   function warpper () {
     warpperHandler = warpper
     update()

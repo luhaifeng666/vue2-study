@@ -1,10 +1,5 @@
 const { isObject } = require('../utils/index')
 
-const obj = {a: 1}
-convert(obj)
-// delete obj.a
-obj.a
-
 function convert(obj) {
   if (!isObject(obj)) throw new TypeError('请传入对象')
 
