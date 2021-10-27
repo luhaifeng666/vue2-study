@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script>
+    const RulesPlugin = {
+      install (Vue) {
+        Vue.mixin({
+          created() {
+            // do something
+            if (this.$options.rules) {
+              Object.keys(this.$options.rules).forEach(key => {
+                const rule = this.$options.rules[key]
+                this.$watch(key, newVal => {
+                  const res = rule.validate(newVal)
+                  if (res) {
+                    console.log(true)
+                  } else {
+                    console.log(rule.message)
+                  }
+                })
+              })
+            }
+          }
+        })
+      }
+    }
+
+    Vue.use(RulesPlugin)
+
+    const vm = new Vue({
+      data () {
+        return { foo: 10 }
+      },
+      rules: {
+        foo: {
+          validate: val => val > 5,
+          message: 'val should greater than five'
+        }
+      }
+    })
+  </script>
+</head>
+<body>
+  111
+</body>
+</html>
